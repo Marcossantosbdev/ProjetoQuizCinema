@@ -1,15 +1,103 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
+<html lang="pt-BR">
     <head>
-        <title>TODO supply a title</title>
+        <title>Sistema Solar – Conheça o nosso lugar no Universo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-        <div>TODO write content</div>
+        <canvas id="estrelas"></canvas>
+
+        <header class="topo">
+            <a class="logo" href="index.html">🪐 Sistema Solar</a>
+            <nav>
+                <a href="#planetas">Planetas</a>
+                <a href="#curiosidades">Curiosidades</a>
+                <a href="Quiz.jsp">Quiz</a>
+                <a href="MenuQuiz.html">Gerenciar</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="sol"></div>
+            <h1>Sistema Solar</h1>
+            <p>Uma viagem pelos oito planetas que giram ao redor do Sol. Explore, descubra curiosidades
+               e depois teste o que aprendeu no nosso quiz!</p>
+            <a class="btn" href="Quiz.jsp">Responder o Quiz</a>
+            <a class="btn btn-claro" href="#planetas">Explorar os planetas</a>
+        </section>
+
+        <main>
+            <section class="secao" id="planetas">
+                <h2 class="reveal">Os oito planetas</h2>
+                <p class="sub reveal">Passe o mouse sobre cada planeta para vê-lo de perto.</p>
+                <div class="planetas">
+            <article class="planeta reveal">
+                <img src="img/mercurio.svg" alt="Ilustração do planeta Mercúrio">
+                <h3>Mercúrio</h3>
+                <p>O menor planeta e o mais próximo do Sol. Um ano em Mercúrio dura apenas 88 dias terrestres.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/venus.svg" alt="Ilustração do planeta Vênus">
+                <h3>Vênus</h3>
+                <p>Atmosfera densa de gás carbônico que prende o calor: cerca de 465 °C na superfície. Gira ao contrário da maioria dos planetas.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/terra.svg" alt="Ilustração do planeta Terra">
+                <h3>Terra</h3>
+                <p>O único mundo conhecido com vida. Cerca de 71% da superfície é coberta por água.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/marte.svg" alt="Ilustração do planeta Marte">
+                <h3>Marte</h3>
+                <p>O óxido de ferro (ferrugem) dá a cor avermelhada. Abriga o Monte Olimpo, o maior vulcão conhecido do Sistema Solar.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/jupiter.svg" alt="Ilustração do planeta Júpiter">
+                <h3>Júpiter</h3>
+                <p>O gigante do Sistema Solar: sua massa é maior que a de todos os outros planetas juntos. A Grande Mancha Vermelha é uma tempestade gigante.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/saturno.svg" alt="Ilustração do planeta Saturno">
+                <h3>Saturno</h3>
+                <p>Famoso por seus anéis de gelo e rocha. É tão pouco denso que, em teoria, flutuaria na água.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/urano.svg" alt="Ilustração do planeta Urano">
+                <h3>Urano</h3>
+                <p>Gira praticamente "deitado", com eixo inclinado cerca de 98°. É um gigante de gelo de cor azul-esverdeada.</p>
+            </article>
+            <article class="planeta reveal">
+                <img src="img/netuno.svg" alt="Ilustração do planeta Netuno">
+                <h3>Netuno</h3>
+                <p>O planeta mais distante do Sol. Tem os ventos mais rápidos do Sistema Solar, passando de 2.000 km/h.</p>
+            </article>
+                </div>
+            </section>
+
+            <section class="secao" id="curiosidades">
+                <h2 class="reveal">Curiosidades</h2>
+                <p class="sub reveal">Alguns números que mostram o tamanho do nosso Sistema Solar.</p>
+                <div class="numeros">
+                    <div class="numero reveal"><strong>99,8%</strong><span>da massa do Sistema Solar está no Sol</span></div>
+                    <div class="numero reveal"><strong>≈ 8 min</strong><span>é o tempo que a luz do Sol leva para chegar à Terra</span></div>
+                    <div class="numero reveal"><strong>4,6 bi</strong><span>de anos é a idade aproximada do Sistema Solar</span></div>
+                    <div class="numero reveal"><strong>8</strong><span>planetas orbitam o Sol</span></div>
+                </div>
+            </section>
+
+            <section class="secao chamada reveal">
+                <h2>Pronto para o desafio?</h2>
+                <p class="sub">São 8 perguntas com 4 alternativas cada. Responda, veja seu resultado e descubra como os outros visitantes responderam.</p>
+                <a class="btn" href="Quiz.jsp">Começar o Quiz</a>
+            </section>
+        </main>
+
+        <footer class="rodape">
+            Projeto de Análise e Desenvolvimento de Software – Trabalho 2 · Ilustrações criadas em SVG para este projeto
+        </footer>
+
+        <script src="js/efeitos.js"></script>
     </body>
 </html>

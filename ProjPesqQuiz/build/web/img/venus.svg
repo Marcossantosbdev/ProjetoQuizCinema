@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+<defs>
+<radialGradient id="sombra" cx="35%" cy="30%" r="80%">
+<stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+<stop offset="1" stop-color="#000" stop-opacity=".65"/></radialGradient>
+<clipPath id="c"><circle cx="150" cy="150" r="100"/></clipPath>
+<radialGradient id="g" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ffe3a0"/><stop offset="1" stop-color="#c98a2b"/></radialGradient>
+</defs>
+<circle cx="150" cy="150" r="100" fill="url(#g)"/><g clip-path="url(#c)" fill="none" stroke="#fff3c4" stroke-width="9" opacity=".35" stroke-linecap="round"><path d="M40 120 Q110 90 170 125 T270 110"/><path d="M40 160 Q120 130 180 165 T270 150"/><path d="M40 200 Q110 175 175 205 T270 190"/></g><circle cx="150" cy="150" r="100" fill="url(#sombra)"/>
+</svg>

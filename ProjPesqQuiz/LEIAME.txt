@@ -1,0 +1,27 @@
+ProjPesqQuiz - Quiz "Sistema Solar" (JavaWeb + MySQL)
+
+COMO EXECUTAR
+1. Ligue o MySQL (XAMPP) e execute o script banco/quizbd.sql no phpMyAdmin (aba SQL).
+   Ele cria o banco "quizbd" e a tabela "participacao".
+2. Se o seu MySQL tiver senha ou porta diferentes, ajuste util/ConectaBD.java
+   (USUARIO, SENHA e a porta dentro de URL).
+3. Abra o projeto no NetBeans e execute (Run). Página inicial: index.html
+
+ESTRUTURA (mesmo padrão do projeto do professor)
+  util/ConectaBD        conexão com o banco
+  model/QuizBean        dados de uma participação (id, nome, r1..r8)
+  model/QuizConteudo    perguntas, alternativas e gabarito (troque o tema por aqui)
+  model/ResumoRelatorio dados do relatório-resumo
+  DAO/InserirDAO        cadastrar        DAO/EditarDAO     editar
+  DAO/ExcluirDAO        excluir          DAO/ListarDAO     listar / buscar
+  DAO/RelatorioDAO      totais e contagens por alternativa
+
+PÁGINAS
+  index.html            site (informações, fotos e efeitos)
+  MenuQuiz.html         menu de gerenciamento
+  Quiz.jsp -> Cadastro.jsp                responder o quiz (cadastrar)
+  Listar.jsp -> editarquiz.jsp -> salvarquiz.jsp
+  Listar.jsp -> excluirquiz.jsp
+  RelatorioUsuarios.jsp (relatório 1)  RelatorioResumo.jsp (relatório 2)
+
+docs/diagrama_de_classes.svg  -> abra no navegador para mostrar no vídeo.

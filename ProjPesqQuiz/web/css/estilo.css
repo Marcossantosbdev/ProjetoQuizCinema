@@ -1,0 +1,172 @@
+/* ===== Estilo geral do site "Sistema Solar" + quiz ===== */
+:root {
+    --fundo: #05071a;
+    --painel: rgba(255, 255, 255, .06);
+    --borda: rgba(255, 255, 255, .14);
+    --texto: #e8ecff;
+    --suave: #a9b3d9;
+    --azul: #6c8cff;
+    --sol: #ffb454;
+    --verde: #3ecf8e;
+    --vermelho: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: var(--texto);
+    background: radial-gradient(ellipse at top, #111a4a 0%, var(--fundo) 60%) fixed;
+    line-height: 1.6;
+}
+
+a { color: var(--azul); }
+h1, h2, h3 { line-height: 1.2; }
+
+#estrelas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; }
+
+/* ----- barra de navegação ----- */
+.topo {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;
+    padding: 12px 28px;
+    background: rgba(5, 7, 26, .85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borda);
+}
+.topo .logo { font-weight: 700; font-size: 1.15rem; color: var(--sol); text-decoration: none; }
+.topo nav a {
+    color: var(--texto); text-decoration: none; margin-left: 18px; padding: 4px 2px;
+    border-bottom: 2px solid transparent; transition: border-color .25s, color .25s;
+}
+.topo nav a:hover { color: var(--sol); border-color: var(--sol); }
+
+/* ----- hero (página inicial) ----- */
+.hero { text-align: center; padding: 90px 20px 70px; }
+.sol {
+    width: 130px; height: 130px; margin: 0 auto 28px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff3b0, var(--sol) 45%, #ff7a18 100%);
+    box-shadow: 0 0 40px 12px rgba(255, 170, 60, .55), 0 0 120px 40px rgba(255, 120, 30, .25);
+    animation: pulsar 4s ease-in-out infinite;
+}
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 40px 12px rgba(255,170,60,.55), 0 0 120px 40px rgba(255,120,30,.25); }
+    50%      { transform: scale(1.06); box-shadow: 0 0 60px 20px rgba(255,170,60,.7), 0 0 160px 60px rgba(255,120,30,.3); }
+}
+.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem); margin: 0 0 12px;
+    background: linear-gradient(90deg, #ffd38a, #ff9a62, #8fa8ff, #ffd38a);
+    background-size: 300% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: brilho 8s linear infinite;
+}
+@keyframes brilho { to { background-position: 300% 0; } }
+.hero p { max-width: 640px; margin: 0 auto 28px; color: var(--suave); font-size: 1.1rem; }
+
+/* ----- botões ----- */
+.btn {
+    display: inline-block; padding: 11px 26px; border: 0; border-radius: 999px; cursor: pointer;
+    font: inherit; font-weight: 600; text-decoration: none; color: #0a0d24; background: var(--sol);
+    transition: transform .2s, box-shadow .2s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255, 180, 84, .45); }
+.btn-azul     { background: var(--azul); color: #fff; }
+.btn-azul:hover { box-shadow: 0 8px 24px rgba(108, 140, 255, .45); }
+.btn-vermelho { background: var(--vermelho); color: #fff; }
+.btn-vermelho:hover { box-shadow: 0 8px 24px rgba(255, 107, 107, .45); }
+.btn-verde    { background: var(--verde); color: #04251a; }
+.btn-claro    { background: transparent; color: var(--texto); border: 1px solid var(--borda); }
+.btn-pequeno  { padding: 5px 14px; font-size: .85rem; }
+
+/* ----- seções ----- */
+.secao { max-width: 1100px; margin: 0 auto; padding: 50px 22px; }
+.secao h2 { text-align: center; font-size: 2rem; margin: 0 0 8px; }
+.secao .sub { text-align: center; color: var(--suave); margin: 0 auto 36px; max-width: 620px; }
+
+.planetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 22px; }
+.planeta {
+    background: var(--painel); border: 1px solid var(--borda); border-radius: 18px;
+    padding: 22px; text-align: center; overflow: hidden;
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+.planeta:hover { transform: translateY(-8px); border-color: var(--azul); box-shadow: 0 14px 34px rgba(0, 0, 0, .45); }
+.planeta img { width: 150px; height: 150px; transition: transform .6s; }
+.planeta:hover img { transform: scale(1.12) rotate(14deg); }
+.planeta h3 { margin: 12px 0 6px; color: var(--sol); }
+.planeta p { margin: 0; color: var(--suave); font-size: .95rem; }
+
+.numeros { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.numero { text-align: center; background: var(--painel); border: 1px solid var(--borda); border-radius: 18px; padding: 26px 16px; }
+.numero strong { display: block; font-size: 2.4rem; color: var(--sol); }
+.numero span { color: var(--suave); }
+
+.chamada { text-align: center; }
+.rodape { text-align: center; color: var(--suave); padding: 30px 20px 40px; font-size: .9rem; border-top: 1px solid var(--borda); }
+
+/* ----- efeito de aparecer ao rolar ----- */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visivel { opacity: 1; transform: none; }
+
+/* ===== páginas internas (quiz, listagem, relatórios) ===== */
+.pagina { max-width: 980px; margin: 0 auto; padding: 34px 20px 60px; }
+.caixa {
+    background: var(--painel); border: 1px solid var(--borda); border-radius: 18px;
+    padding: 30px; backdrop-filter: blur(4px);
+}
+.caixa h1 { margin-top: 0; color: var(--sol); text-align: center; }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 22px; }
+.menu-lista { display: grid; gap: 14px; max-width: 420px; margin: 24px auto 0; }
+.menu-lista .btn { text-align: center; }
+
+label.campo { display: block; font-weight: 600; margin-bottom: 4px; }
+input[type=text] {
+    width: 100%; padding: 11px 14px; margin-bottom: 18px; border-radius: 10px;
+    border: 1px solid var(--borda); background: rgba(255, 255, 255, .08); color: var(--texto); font: inherit;
+}
+input[type=text]:focus { outline: 2px solid var(--azul); }
+
+fieldset.questao { border: 1px solid var(--borda); border-radius: 14px; margin: 0 0 18px; padding: 14px 18px 10px; }
+fieldset.questao legend { padding: 0 8px; font-weight: 600; color: var(--sol); }
+.opcao {
+    display: block; padding: 8px 12px; margin: 0 0 6px; border-radius: 10px; cursor: pointer;
+    border: 1px solid transparent; transition: background .2s, border-color .2s;
+}
+.opcao:hover { background: rgba(108, 140, 255, .15); border-color: var(--azul); }
+.opcao input { margin-right: 10px; accent-color: var(--sol); }
+
+.msg { padding: 14px 18px; border-radius: 12px; margin: 0 0 18px; }
+.msg-ok   { background: rgba(62, 207, 142, .15);  border: 1px solid var(--verde); }
+.msg-erro { background: rgba(255, 107, 107, .15); border: 1px solid var(--vermelho); }
+
+/* tabelas */
+.rolagem { overflow-x: auto; }
+table.tabela { width: 100%; border-collapse: collapse; }
+table.tabela th { background: rgba(108, 140, 255, .28); text-align: left; }
+table.tabela th, table.tabela td { padding: 10px 12px; border-bottom: 1px solid var(--borda); }
+table.tabela tbody tr:nth-child(even) { background: rgba(255, 255, 255, .04); }
+table.tabela tbody tr:hover { background: rgba(255, 255, 255, .1); }
+table.tabela td.centro, table.tabela th.centro { text-align: center; }
+
+/* gabarito / resultado */
+.certo  { color: var(--verde); font-weight: 600; }
+.errado { color: var(--vermelho); font-weight: 600; }
+.placar { text-align: center; font-size: 1.5rem; margin: 6px 0 22px; }
+.placar strong { color: var(--sol); font-size: 2.4rem; }
+
+/* relatório-resumo */
+.totais { text-align: center; font-size: 1.2rem; margin-bottom: 26px; }
+.totais strong { color: var(--sol); font-size: 2rem; }
+.resumo-questao { margin-bottom: 26px; }
+.resumo-questao h3 { margin: 0 0 10px; }
+.linha-barra { display: grid; grid-template-columns: 200px 1fr 120px; gap: 12px; align-items: center; margin-bottom: 8px; }
+.barra-fundo { height: 16px; background: rgba(255, 255, 255, .1); border-radius: 999px; overflow: hidden; }
+.barra-valor { height: 100%; background: linear-gradient(90deg, var(--azul), #9bb1ff); border-radius: 999px; }
+.barra-valor.correta { background: linear-gradient(90deg, var(--verde), #8af0c4); }
+.linha-barra small { color: var(--suave); text-align: right; }
+@media (max-width: 640px) { .linha-barra { grid-template-columns: 1fr; gap: 4px; } .linha-barra small { text-align: left; } }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+}
