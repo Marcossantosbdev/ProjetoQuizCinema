@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+<defs>
+<radialGradient id="sombra" cx="35%" cy="30%" r="80%">
+<stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+<stop offset="1" stop-color="#000" stop-opacity=".65"/></radialGradient>
+<clipPath id="c"><circle cx="150" cy="150" r="100"/></clipPath>
+<radialGradient id="g" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#f6e3b0"/><stop offset="1" stop-color="#b88f46"/></radialGradient><clipPath id="c2"><circle cx="150" cy="150" r="82"/></clipPath>
+</defs>
+<g transform="rotate(-18 150 150)"><ellipse cx="150" cy="150" rx="140" ry="34" fill="none" stroke="#b79b6a" stroke-width="16" opacity=".9"/><ellipse cx="150" cy="150" rx="118" ry="27" fill="none" stroke="#e3cfa0" stroke-width="8" opacity=".9"/></g><circle cx="150" cy="150" r="82" fill="url(#g)"/><g clip-path="url(#c2)" fill="none" stroke="#a88a55" stroke-width="7" opacity=".35"><path d="M60 130 H240"/><path d="M60 160 H240"/><path d="M60 190 H240"/></g><circle cx="150" cy="150" r="82" fill="url(#sombra)"/><g transform="rotate(-18 150 150)"><path d="M10 150 A140 34 0 0 0 290 150" fill="none" stroke="#b79b6a" stroke-width="16" opacity=".95"/><path d="M32 150 A118 27 0 0 0 268 150" fill="none" stroke="#e3cfa0" stroke-width="8" opacity=".95"/></g>
+</svg>
